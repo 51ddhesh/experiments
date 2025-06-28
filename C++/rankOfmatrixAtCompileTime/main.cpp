@@ -1,5 +1,6 @@
 // Necessary header for static assertions
 #include <cassert>
+#include <cstddef>
 
 // Primary template for Rank: default value is 0, for non-array types
 template <typename T>
@@ -43,6 +44,16 @@ int main() {
 
     // Rank of a 2D array is 2
     static_assert(Rank<decltype(a)>::value == 2);
+
+    // Rank of a 3D matrix is 3 
+    constexpr int b[3][3][3] = {
+        {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}},
+        {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}},
+        {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}} 
+    };
+    static_assert(Rank<decltype(b)>::value == 3);
+
+    static_assert(Rank<int[2][2][2][2]>::value == 4);
 
     return 0;
 }
