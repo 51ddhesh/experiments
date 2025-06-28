@@ -1,6 +1,6 @@
 // Necessary header for static assertions
 #include <cassert>
-#include <cstddef>
+#include <cstddef> // header for size_t 
 
 // Primary template for Rank: default value is 0, for non-array types
 template <typename T>
