@@ -1,3 +1,10 @@
+/*
+ *  Here, static is used to make the elements inside the struct accessible at class level and not at
+ *  an instance level. This helps in accessing the elements inside the struct without creating its object
+ *  or an instance.
+ *  The constexpr is used to make sure that the value is constant during compile time.
+ */
+
 // Necessary header for static assertions
 #include <cassert>
 #include <cstddef> // header for size_t 
